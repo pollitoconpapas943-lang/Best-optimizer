@@ -1,23 +1,445 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Best Optimizer</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0d10;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            width: 100%;
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #a8adb5;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 80px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 7px 14px;
+            border: 1px solid #252a31;
+            border-radius: 50px;
+            color: #9ca3af;
+            font-size: 13px;
+            margin-bottom: 25px;
+            background: #101318;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 82px);
+            line-height: 1.05;
+            letter-spacing: -4px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #8b949e;
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin: 0 auto 35px;
+            color: #9ca3af;
+            font-size: 18px;
+        }
+
+        /* BUTTON */
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #0b0d10;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background: #e5e7eb;
+        }
+
+        .btn-secondary {
+            border: 1px solid #2b3038;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #15181d;
+            transform: translateY(-2px);
+        }
+
+        /* FEATURES */
+
+        .features {
+            padding: 100px 8%;
+            border-top: 1px solid #191c21;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            letter-spacing: -1.5px;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: #8b949e;
+        }
+
+        .feature-grid {
+            max-width: 1050px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .card {
+            background: #101318;
+            border: 1px solid #20242b;
+            border-radius: 14px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #363c45;
+        }
+
+        .icon {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #8b949e;
+            font-size: 14px;
+        }
+
+        /* DOWNLOAD */
+
+        .download {
+            padding: 110px 20px;
+            text-align: center;
+            border-top: 1px solid #191c21;
+        }
+
+        .download h2 {
+            font-size: 42px;
+            letter-spacing: -2px;
+            margin-bottom: 15px;
+        }
+
+        .download p {
+            color: #8b949e;
+            margin-bottom: 30px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid #191c21;
+            padding: 30px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #686f79;
+            font-size: 13px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .download h2 {
+                font-size: 34px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+    </style>
 </head>
 
 <body>
 
-    <h1>Best Optimizer</h1>
+    <!-- NAVEGACIÓN -->
 
-    <h2>Optimiza tu PC al máximo</h2>
+    <nav>
 
-    <p>
-        Best Optimizer es una herramienta diseñada para ayudarte
-        a optimizar y mejorar el rendimiento de tu equipo.
-    </p>
+        <div class="logo">
+            Best Optimizer
+        </div>
 
-    <button>Descargar Best Optimizer</button>
+        <div class="nav-links">
+            <a href="#caracteristicas">Características</a>
+            <a href="#descargar">Descargar</a>
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                Simple. Rápido. Eficiente.
+            </div>
+
+            <h1>
+                Optimiza tu PC.<br>
+                <span>Sin complicaciones.</span>
+            </h1>
+
+            <p>
+                Best Optimizer es una herramienta diseñada para
+                ayudarte a mantener tu equipo limpio, rápido y
+                funcionando de la mejor manera posible.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#descargar" class="btn btn-primary">
+                    Descargar ahora
+                </a>
+
+                <a href="#caracteristicas" class="btn btn-secondary">
+                    Conocer más
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CARACTERÍSTICAS -->
+
+    <section class="features" id="caracteristicas">
+
+        <div class="section-title">
+
+            <h2>
+                Todo lo que necesitas.
+            </h2>
+
+            <p>
+                Herramientas sencillas para mantener tu PC en buen estado.
+            </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+            <div class="card">
+
+                <div class="icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Rendimiento
+                </h3>
+
+                <p>
+                    Mejora el rendimiento de tu equipo
+                    con herramientas diseñadas para optimizarlo.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🧹
+                </div>
+
+                <h3>
+                    Limpieza
+                </h3>
+
+                <p>
+                    Mantén tu sistema limpio y libera
+                    espacio innecesario de tu almacenamiento.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🔧
+                </div>
+
+                <h3>
+                    Herramientas
+                </h3>
+
+                <p>
+                    Accede a diferentes herramientas
+                    para administrar y cuidar tu equipo.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DESCARGA -->
+
+    <section class="download" id="descargar">
+
+        <h2>
+            ¿Listo para optimizar?
+        </h2>
+
+        <p>
+            Descarga Best Optimizer y lleva tu PC al siguiente nivel.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#" class="btn btn-primary">
+                Descargar Best Optimizer
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div>
+            © 2026 Best Optimizer
+        </div>
+
+        <div>
+            Hecho con Python & tecnología.
+        </div>
+
+    </footer>
+
 
 </body>
+
 </html>
